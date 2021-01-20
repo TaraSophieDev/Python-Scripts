@@ -7,7 +7,6 @@ hour = dt.datetime.now()
 cHour = hour.hour
 
 userName = getpass.getuser()
-print(userName)
 
 cPath = 'C:/Users/'
 path = cPath + userName
