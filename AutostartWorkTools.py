@@ -1,16 +1,19 @@
 import os
 import subprocess as sp
 import datetime as dt
-import getpass
 
+#Detecting directories
+homeDirectory = os.environ['USERPROFILE']
+programFiles = os.environ['PROGRAMW6432']
+print(programFiles)
+
+weekday = dt.datetime.today().weekday()
+print(weekday)
 hour = dt.datetime.now()
-cHour = hour.hour
+curHour = hour.hour
 
-userName = getpass.getuser()
 
-cPath = 'C:/Users/'
-path = cPath + userName
-if (((dt.datetime.today().weekday() + 1) < 5) and (cHour < 10 and cHour >6)):
-    sp.Popen(path + '/AppData/Local/Microsoft/Teams/current/Teams.exe')
-    sp.Popen('C:/Program Files/Microsoft Office/root/Office16/OUTLOOK.EXE')
-    sp.Popen('C:/Program Files/Oracle/VirtualBox/VirtualBox.exe')
+if (((weekday + 1) < 6) and (6 < curHour < 10)):
+    sp.Popen(f'{homeDirectory}/AppData/Local/Microsoft/Teams/current/Teams.exe')
+    sp.Popen(f'{programFiles}/Microsoft Office/root/Office16/OUTLOOK.EXE')
+    sp.Popen(f'{programFiles}/Oracle/VirtualBox/VirtualBox.exe')
