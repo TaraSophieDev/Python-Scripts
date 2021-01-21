@@ -5,10 +5,9 @@ import datetime as dt
 #Detecting directories
 homeDirectory = os.environ['USERPROFILE']
 programFiles = os.environ['PROGRAMW6432']
-print(programFiles)
+
 
 weekday = dt.datetime.today().weekday()
-print(weekday)
 hour = dt.datetime.now()
 curHour = hour.hour
 
