@@ -15,14 +15,14 @@ for r_sprites in os.listdir(regular_folder):
   result = os.path.join(path, r_sprites)
   r_sprite_colors = cg.extract(result, 6)
 
-  for index in range(0, 6):
+  for index in range(0, len(r_sprite_colors)):
     first_color = r_sprite_colors[index]
     rgb = first_color.rgb
     r = rgb.r
     g = rgb.g
     b = rgb.b
-
     print(r_sprites, "r",r, "g", g,"b", b)
+    print("index ",index + 1)
   #print(r_sprites, r_sprite_colors)
   #write_csv(r_sprites, r_sprite_colors)
   #print(r_sprites, r_sprite_colors)
